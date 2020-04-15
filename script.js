@@ -4,7 +4,7 @@
 //v3.4
 
 window.onload = function() {
- alert("Welcome to 'Shopping List' App!\n\nCreated by Rock Valley College\n**Javascript(Web233) Students**\n\nQuestions?\nemail Professor Chuck Konkol\nc.konkol@rockvalleycollege.edu\n\nRegister @ RockValleyCollege.edu");
+ alert("Welcome to 'Shopping List' App!\n\nCreated Shulgan\n**Javascript(Web233) Student**");
  populateshoppinglistonload();
   displayShoppinglists();
     clearFocus();
@@ -12,7 +12,7 @@ window.onload = function() {
 
 function about()
 {
-     alert("Welcome to 'Shopping List' App!\n\nCreated by Rock Valley College\n**Javascript(Web233) Students**\n\nQuestions?\nemail Professor Chuck Konkol\nc.konkol@rockvalleycollege.edu\n\nRegister @ RockValleyCollege.edu");
+     alert("Welcome to 'Shopping List' App!\n\nCreated Shulgan\n**Javascript(Web233) Student**");
 
 }
 
