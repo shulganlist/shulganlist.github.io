@@ -1,4 +1,4 @@
-//v 4.0 save / get array via cookies
+di//v 4.0 save / get array via cookies
 //v 4.0 read cookie on load and display
 
 //v3.4 Add popup describing app when visitors load webpage the first time
@@ -6,8 +6,8 @@
 window.onload = function() {
  alert("Welcome to 'Shopping List' App!\n\nCreated by Shulgan\n**Javascript(Web233) Student**");
  populateshoppinglistonload();
-  displayShoppinglists();
-    clearFocus();
+ displayShoppinglists();
+ clearFocus();
 };
 
 //v4.1 get values via URL
@@ -22,15 +22,49 @@ function get(name){
     if(num>=0) return url.substr(0,num);
     if(num<0)  return url;
 }
-//ShareList passbyvalues Week 14
+
+//v4.1 ShareList via bitly api
 function passlist()
 {
- var url = "https://shulganlist.github.io/index.html?list="+ shoppinglist;
- //Week 14 add link to sharelist id
-      document.getElementById("sharelist").innerHTML = 'Share List:\n' + url;
- //Copy URL
-      copyToClipboard(url);
+var url = "https://shulganlist.github.io/index.html?list="+ shoppinglist;   //replace YOURGITHUBURL with your Github repo URL example: Konkollist.github.io
+   var accessToken = "3a23dac93e15ec6085e0fc52957f9e2fdf7150f5"; //replace with your NEW Bit.ly TOKEN
+   var params = {
+       "long_url" : url          
+   };
+   $.ajax({
+       url: "https://api-ssl.bitly.com/v4/shorten",
+       cache: false,
+       dataType: "json",
+       method: "POST",
+       contentType: "application/json",
+       beforeSend: function (xhr) {
+           xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+       },
+       data: JSON.stringify(params)
+   }).done(function(data) {
+       //alert(data.link);
+        getshorturl = 1;
+        document.getElementById("sharelist").innerHTML = 'Share List:\n' + data.link;
+        copyToClipboard(data.link);
+   }).fail(function(data) {
+       //alert(data.link);
+     document.getElementById("sharelist").innerHTML = 'Share List:\n' + url;
+     //copyToClipboard("sharelist");
+     copyToClipboard(url);
+     //alert("ShoppingList URL Copied");
+   });
 }
+
+//ShareList passbyvalues Week 14
+//function passlist()
+//{
+ //var url = "https://shulganlist.github.io/index.html?list="+ shoppinglist;
+ //Week 14 add link to sharelist id
+     // document.getElementById("sharelist").innerHTML = 'Share List:\n' + url;
+ //Copy URL
+      //copyToClipboard(url);
+//}
+
 //vFinal share function
 function share()
 {
