@@ -1,5 +1,15 @@
-di//v 4.0 save / get array via cookies
+//v 4.0 save / get array via cookies
 //v 4.0 read cookie on load and display
+
+var MyItems = {
+  name:"",
+  price:""
+};
+
+var shoppinglist = [];
+
+//v 3.1 addtocart empty array
+var addtocart = [];
 
 //v3.4 Add popup describing app when visitors load webpage the first time
 
@@ -147,17 +157,6 @@ function populateshoppinglistonload()
     shoppinglist = y;
    }
 }
-
-
-var MyItems = {
-  name:"",
-  price:""
-};
-
-var shoppinglist = [];
-
-//v 3.1 addtocart empty array
-var addtocart = [];
 
 //v3.1
 function changeShoppinglist(position) {
