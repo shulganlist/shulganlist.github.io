@@ -1,6 +1,8 @@
 //v 4.0 save / get array via cookies
 //v 4.0 read cookie on load and display
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 var MyItems = {
   name:"",
   price:""
